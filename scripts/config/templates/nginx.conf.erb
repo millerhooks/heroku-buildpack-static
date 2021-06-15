@@ -58,7 +58,6 @@ http {
     mruby_post_read_handler /app/bin/config/lib/ngx_mruby/headers.rb cache;
 
     location / {
-      gzip_static on;
       mruby_set $fallback /app/bin/config/lib/ngx_mruby/routes_fallback.rb cache;
     <% if clean_urls %>
       try_files $uri.html $uri $uri/ $fallback;
