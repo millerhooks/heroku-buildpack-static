@@ -7,13 +7,16 @@ events {
   worker_connections <%= worker_connections %>;
 }
 
+server {
+  gzip_static on;
+}
+
 http {
   gzip on;
   gzip_comp_level 6;
   gzip_min_length 512;
   gzip_types text/plain image/svg+xml text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript <%= types %>;
   gzip_vary on;
-  gzip_static on;
   gzip_proxied any;
 
   server_tokens off;
