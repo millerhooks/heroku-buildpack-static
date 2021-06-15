@@ -38,6 +38,7 @@ http {
   client_body_timeout 5;
 
   server {
+    gzip_static on;
     listen <%= port %> reuseport;
     charset <%= encoding %>;
     port_in_redirect off;
