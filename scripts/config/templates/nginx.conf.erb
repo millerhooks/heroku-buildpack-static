@@ -7,10 +7,6 @@ events {
   worker_connections <%= worker_connections %>;
 }
 
-server {
-  gzip_static on;
-}
-
 http {
   gzip on;
   gzip_comp_level 6;
@@ -42,6 +38,7 @@ http {
   client_body_timeout 5;
 
   server {
+    gzip_static on;
     listen <%= port %> reuseport;
     charset <%= encoding %>;
     port_in_redirect off;
